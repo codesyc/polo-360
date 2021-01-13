@@ -1,0 +1,245 @@
+body{
+    background: url(../img/bd-bg.png) repeat-x;
+    /* height: 2000px; */
+}
+.w{
+    width: 940px;
+    margin: 0 auto;
+}
+/* 解决高度塌陷 */
+.clearfix:after,.clearfix:before{
+    content: '';
+    display: table;/*还能解决垂直外边距重叠*/
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}
+/* header */
+.header{
+    /* background: #bfa; */
+    padding: 37px 0 46px;
+}
+.logo{
+    margin: 0 18px 0 15px;
+}
+.nav{
+    float: right;
+    margin-top: 22px;
+}
+.nav li{
+    float: left;
+    padding: 0 10px 10px;
+    border-left: 1px  #d6d6d6 dotted;
+}
+.nav a{
+    color: #666;
+    font: bold 14px Georgia;
+    text-decoration: none;
+}
+.nav a:hover{
+    color: #a3a2a2;
+    text-decoration: underline;
+}
+.nav p{
+    color: #b7b7b7;
+    font: 11px Tahoma;/*chrome中最小字体为12px*/
+}
+/* banner */
+.banner{
+    height: 356px;
+    background: url(../img/banner-bg.png) no-repeat bottom center;/*底部居中*/
+    position: relative;
+}
+.banner .pointers{
+    position: absolute;
+    top: 314px;
+    left: 20px;
+} 
+.pointers a{
+    float: left;
+    width: 17px;
+    height: 17px;
+    background: url(../img/pointer.png) no-repeat;
+    margin-left: 4px;
+}
+.pointers a:hover,.pointers .active{/*并集选择器*/
+    background: url(../img/pointer-active.png) no-repeat;
+}
+/* content */
+.content{
+    /* background: red; */
+}
+.content h1{
+    text-align: center;
+    color: #000;
+    font: bold 24px Georgia;
+    padding: 6px 0 20px;
+    margin-bottom: 38px;
+    background: url(../img/line.png) no-repeat bottom center;
+}
+.content .pl,.content .cs,.content .uc,
+.contact .sc,.contact .co,.contact .nu{
+     /*子元素开启浮动，脱离文档流，导致高度塌陷*/
+    float: left;
+    /* height: 100px; */
+    width: 300px;
+    /* background: red; */
+}
+.content .cs,.contact .co{
+    margin: 0 20px;
+}
+.content h2{
+    color: #11719e;
+    font: 21px Georgia;
+}
+.content h4{
+    color: #8c8c8c;
+    font: 12px helvetica;
+}
+.content .img{
+    width: 299px;
+    height: 190px;
+    background: url(../img/img-bg.png) no-repeat;
+    margin: 16px 0 10px;
+    text-align: center;/*图片水平居中*/
+    padding-top: 12px;/*设置padding，会改变可见框的大小，需重新修改*/
+}
+.content p{
+    height: 92px;
+    color: #3e3e3e;
+    font: 13px helvetica;
+}
+.content a{
+    display: block;
+    width: 163px;
+    height: 40px;
+    background: url(../img/btn1.png) no-repeat;
+    text-decoration: none;
+    color: #016999;
+    font: 12px/40px helvetica;
+    text-indent: 1em;/*设置首行缩进12px*/
+    margin-bottom: 35px;
+}
+.content a:hover{
+    color: #05a7f2;
+}
+/* contact */
+.contact{
+    background:  url(../img/line.png) no-repeat top center;
+}
+.contact .sc,.contact .co,.contact .nu{
+    /* height: 500px; */
+    /* background: #bfa; */
+}
+.contact h2{
+    color: #444444;
+    font: 18px Georgia;
+    border-bottom: 1px dashed #d3d3d3;
+    padding: 45px 0 10px;
+    margin-bottom: 15px;
+}
+.contact .txt{
+    width: 276px;
+    height: 33px;
+    border: none;/*去除表单项默认边框*/
+    background: url(../img/input.png) no-repeat;
+    _background-attachment: fixed;/*设置背景不随元素滚动(只有IE6识别)*/
+    /*先清除浏览器的默人内外边距*/
+    /* margin: 0;
+    padding: 0; */
+    line-height: 1em;
+    margin-bottom:16px;
+    padding: 0px 10px;
+}
+.contact .tarea{
+    width: 296px;
+    height: 134px;
+    border: none;
+    background: url(../img/textarea.png) no-repeat;
+    _background-attachment: fixed;
+    overflow: auto;
+    resize: none;/*设置不能调整大小*/
+    padding: 10px;
+    /*不改变可见框大小*/
+    box-sizing: border-box;
+}
+.contact .btn{
+    width: 163px;
+    height: 32px;
+    background: url(../img/btn2.png) no-repeat;
+    border: none;
+    padding: 0;
+    margin: 11px 0 23px;
+    color: white;
+    font: 13px Georgia;
+    text-align: left;
+    text-indent: 1em;
+}
+.contact .btn:hover{
+    cursor: pointer;
+    color: #cfcdcd;
+}
+.sc p{
+    color: #444;
+    font: 12px/1 helvetica;/*1倍行高*/
+}
+.sc h3{
+    color: #444;
+    font: bold 18px/1 GillSansMT;
+    border-bottom: 1px dashed #d3d3d3;
+    padding-bottom:8px;
+    margin: 40px 0  10px;
+}
+.sc .imgs{
+    font-size: 0;/*设置字体大小为0，去除空格*/
+    margin-top: 5px;
+}
+.sc .imgs a{
+    margin-right: 6px;
+}
+.sc .txt{
+    margin: 15px 0 2px;
+    _margin-top: 20px;/*兼容IE6*/
+}
+.nu p{
+    height: 58px;
+    _height: 60px;
+    color: #444;
+    font: 12px/1 helvetica;
+    border-bottom: 1px dashed #d3d3d3;
+    margin-bottom: 14px;
+    padding-bottom: 9px;
+}
+.nu .nm{
+    margin: 0;
+}
+.nu img{
+    float: left;/*实现文字环绕图片效果(使图片浮动)*/
+    margin-right: 8px;
+}
+/* footer */
+
+.footer{
+    height: 173px;
+    background: #333;
+    border-top: 10px solid #4c4c4c;
+}
+.footer p,.footer a{
+    text-decoration: none;
+    color: #999;
+    font: 11px Helvetica;
+}
+.footer .cp{
+    float: right;/*浮动不会超过其兄弟元素(调换html中的位置)*/
+}
+.footer a:hover{
+    color: #e8e3e3;
+}
+.footer .w{
+    padding-top: 18px;
+}
+.footer p{
+    margin: 0 23px 10px 8px;
+}
+
